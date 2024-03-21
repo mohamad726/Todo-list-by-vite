@@ -17,7 +17,7 @@ export const App = () => {
         children: 'slam111',
         className: 'bg-green-400',
       }),
-      btn('Add To list', 'border mr-5 mt-5'),
+      btn('Add To', 'border mr-5 mt-5'),
       btn('closed', 'border '),
     ],
   });
