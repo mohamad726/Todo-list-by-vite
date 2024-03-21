@@ -1,6 +1,5 @@
-import { El } from './components/shared/El/inedx';
-import { btn } from './components/shared/button/indec';
-
+import { El } from './components/shared/El';
+import { btn } from './components/shared/button';
 
 export const App = () => {
   return El({
