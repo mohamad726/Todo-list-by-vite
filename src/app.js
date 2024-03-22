@@ -1,6 +1,6 @@
 import { List } from './components/home/List';
+import { El } from './components/shared/El';
 import { MainLayout } from './layout';
-
 
 export const App = () => {
   return El({
@@ -18,8 +18,8 @@ export const App = () => {
         children: 'slam111',
         className: 'bg-green-400',
       }),
-      btn('Add To', 'border mr-5 mt-5'),
-      btn('closed', 'border '),
+      Btn('Add To', 'border mr-5 mt-5'),
+      Btn('closed', 'border '),
     ],
   });
 };
