@@ -1,12 +1,14 @@
 import { El } from '@/components/shared/El';
 
 export const Footer = () => {
+ 
   return El({
     element: 'div',
     className: 'flex justify-end mt-8',
     children: [
       El({
         element: 'div',
+        id:"qw",
         className: 'ml-5',
         children: 'Rows per page:',
       }),
@@ -51,3 +53,5 @@ export const Footer = () => {
     ],
   });
 };
+
+

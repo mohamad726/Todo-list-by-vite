@@ -8,19 +8,16 @@ export const showMadal = () => {
   Show_modal.style.display = 'grid';
 };
 
-export const Edit_modal = () => {
-    const Edit_modal = document.getElementById('Edit_modal');
-    Edit_modal.style.display = 'grid';
-  };
 
-const modalAddAndEdit = (btnName) => {
+
+ const modalAddAndEdit = (btnName,idForm,id_InputTask,id_InputDescription) => {
   return El({
     element: 'form',
     className: 'flex flex-col w-full gap-5',
-    id: 'formModal',
+    id: idForm,
     children: [
-      input('taskName', 'Text', 'taskName', 'Task Name'),
-      input('description', 'Text', 'description', 'Description'),
+      input(`${id_InputTask}`, 'Text', 'taskName', 'Task Name'),
+      input(`${id_InputDescription}`, 'Text', 'description', 'Description'),
       El({
         element: 'select',
         className: 'text-black p-2',
@@ -64,7 +61,9 @@ const modalAddAndEdit = (btnName) => {
   });
 };
 
-export const Modal = (titleModal, id_modal, btnName) => {
+
+
+export const Modal = (titleModal, id_modal, btnName,idForm,id_InputTask,id_InputDescription) => {
   return El({
     element: 'section',
     className:
@@ -79,8 +78,9 @@ export const Modal = (titleModal, id_modal, btnName) => {
           El({
             element: 'h3',
             innerHtml: `${titleModal}`,
+            
           }),
-          modalAddAndEdit(btnName),
+          modalAddAndEdit(btnName,idForm,id_InputTask,id_InputDescription),
         ],
       }),
     ],

@@ -1,5 +1,5 @@
 import { El } from '@/components/shared/El';
-import { Edit_modal } from '@/components/shared/Modal/AddAndEdit';
+
 
 export const ListItems = () => {
   return El({
@@ -15,22 +15,22 @@ export const ListItems = () => {
               El({
                 element: 'th',
                 className: 'border border-slate-300 py-5 text-start pl-3',
-                innerHTMl: 'Task Name',
+                innerText: 'Task Name',
               }),
               El({
                 element: 'th',
                 className: 'border border-slate-300',
-                innerHTMl: 'Priority',
+                innerText: 'Priority',
               }),
               El({
                 element: 'th',
                 className: 'border border-slate-300',
-                innerHTMl: 'Status',
+                innerText: 'Status',
               }),
               El({
                 element: 'th',
                 className: 'border border-slate-300',
-                innerHTMl: 'Deadline',
+                innerText: 'Deadline',
               }),
               El({
                 element: 'th',
@@ -335,3 +335,4 @@ export const ListItems = () => {
     ],
   });
 };
+
