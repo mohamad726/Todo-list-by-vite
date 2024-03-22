@@ -1,7 +1,7 @@
 import { List } from './components/home/List';
 import { El } from './components/shared/El';
+import { Btn } from './components/shared/button';
 import { MainLayout } from './layout';
-
 export const App = () => {
   return El({
     element: 'div',
