@@ -3,7 +3,6 @@ import { MainLayout } from './layout';
 
 
 export const App = () => {
-<<<<<<< HEAD
   return El({
     element: 'div',
     className: ' gap-10 ',
@@ -23,8 +22,5 @@ export const App = () => {
       btn('closed', 'border '),
     ],
   });
-=======
-  return MainLayout(List)
->>>>>>> 528dd501bd3895ea5c4c25d83582fe53a92be26f
 };
 
