@@ -8,9 +8,14 @@ export const showMadal = () => {
   Show_modal.style.display = 'grid';
 };
 
-
-
- const modalAddAndEdit = (btnName,idForm,id_InputTask,id_InputDescription) => {
+const modalAddAndEdit = (
+  btnName,
+  idForm,
+  id_InputTask,
+  id_InputDescription,
+  Id_priority,
+  Id_statusTask
+) => {
   return El({
     element: 'form',
     className: 'flex flex-col w-full gap-5',
@@ -21,19 +26,21 @@ export const showMadal = () => {
       El({
         element: 'select',
         className: 'text-black p-2',
-        id: 'priority',
+        id: Id_priority,
+        name: 'priority',
         children: [
-          option('', 'Select Priority'),
+          option('', 'Select Priority', 'selected'),
           option('Low', 'Low'),
           option('Medium', 'Medium'),
-          option('High', 'High', 'selected'),
+          option('High', 'High'),
         ],
       }),
 
       El({
         element: 'select',
         className: 'text-black p-2',
-        id: 'priority',
+        id: Id_statusTask,
+        name: 'statusTask',
         children: [
           option('', 'Select Status', 'selected'),
           option('Todo', 'Todo'),
@@ -61,9 +68,16 @@ export const showMadal = () => {
   });
 };
 
-
-
-export const Modal = (titleModal, id_modal, btnName,idForm,id_InputTask,id_InputDescription) => {
+export const Modal = (
+  titleModal,
+  id_modal,
+  btnName,
+  idForm,
+  id_InputTask,
+  id_InputDescription,
+  Id_priority,
+  Id_statusTask
+) => {
   return El({
     element: 'section',
     className:
@@ -78,9 +92,9 @@ export const Modal = (titleModal, id_modal, btnName,idForm,id_InputTask,id_Input
           El({
             element: 'h3',
             innerHtml: `${titleModal}`,
-            
           }),
-          modalAddAndEdit(btnName,idForm,id_InputTask,id_InputDescription),
+          modalAddAndEdit(btnName, idForm, id_InputTask, id_InputDescription,  Id_priority,
+            Id_statusTask),
         ],
       }),
     ],

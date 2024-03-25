@@ -1,22 +1,28 @@
-// export const submit=document.getElementById('formModal')
-// console.log(submit);
-// submit.addEventListener('submit', handleSubmit);
 
-import { sendUserData } from "@/library/axios/sendDataToUser";
+import { sendUserData } from '@/library/axios/sendDataToUser';
 
 export const handleSubmit = () => {
   const submit = document.getElementById('formModal');
   submit.addEventListener('submit', (e) => {
     e.preventDefault();
-    const {userName}=e.target
-console.log(taskName.value);
-sendUserData()
+    console.log(e.target);
 
-
+    let dataList = {
+      taskName: taskName?.value,
+      priority: priority.value,
+      description: description?.value,
+      statusTask: statusmodaladd.value,
+      date: new Date().toLocaleDateString('fa-IR'),
+    };
+    sendUserData(obj);
+    Show_modal.style.display = 'none';
+   
   });
+  
 };
+
 // function handleSubmit(e) {
-//    
+//
 
 //     let date = new Date().toLocaleDateString('fa-IR');
 

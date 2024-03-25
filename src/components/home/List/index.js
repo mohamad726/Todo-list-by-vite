@@ -7,8 +7,8 @@ export const List = () => {
   return El({
     element: 'div',
     children: [
-      Modal('Add Data to list', 'Show_modal', 'Add To List','formModal','taskName','description'),
-      Modal('Edit  list', 'Edit_modal', 'Save Edit List ','submitEditForm','inputEditTaskName','inputEditDescription'),
+      Modal('Add Data to list', 'Show_modal', 'Add To List','formModal','taskName','description','priority','statusmodaladd'),
+      Modal('Edit  list', 'Edit_modal', 'Save Edit List ','submitEditForm','inputEditTaskName','inputEditDescription','editValueSelectPriority','editValueSelectStatus'),
       ViewDataModal("View_modal"),
       ListItems(),
     ],

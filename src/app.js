@@ -2,6 +2,7 @@ import { List } from './components/home/List';
 import { MainLayout } from './layout';
 
 export const App = () => {
-
-  return MainLayout(List)
+  //  let data = await getUser();
+  //console.log(data);
+  return MainLayout(List);
 };
