@@ -1,9 +1,11 @@
+import { Edit_Item, Show_Item } from '@/components/home/List';
 import { El } from '@/components/shared/El';
-import { getData } from '@/library/axios/getUser';
+
+import { delete_Item, getData } from '@/library/axios/getUser';
 
 const data = await getData();
+
 export const ListItems = () => {
-  console.log(data);
   return El({
     element: 'table',
     className: 'w-full border border-slate-300',
@@ -57,7 +59,6 @@ export const ListItems = () => {
 
 function items() {
   return data.map((items) => {
-    console.log(items);
     return El({
       element: 'tr',
       children: [
@@ -72,7 +73,15 @@ function items() {
           children: [
             El({
               element: 'span',
-              className: 'bg-neutral-200 rounded-2xl px-3 py-2',
+              className: `rounded-2xl px-3 py-2 ${
+                items.priority == 'Low'
+                  ? 'bg-neutral-200'
+                  : items.priority == 'High'
+                  ? 'bg-red-600'
+                  : items.priority == 'Medium'
+                  ? 'bg-amber-400'
+                  : ''
+              }`,
               innerText: items.priority,
             }),
           ],
@@ -83,7 +92,15 @@ function items() {
           children: [
             El({
               element: 'span',
-              className: `bg-red-600 text-[#FFF] rounded-2xl px-3 py-2`,
+              className: `text-[#FFF] rounded-2xl px-3 py-2 ${
+                items.statusTask == 'Todo'
+                  ? 'bg-red-600 text-[#FFF] '
+                  : items.statusTask == 'Doing'
+                  ? 'bg-amber-400 text-[#000]'
+                  : items.statusTask == 'Done'
+                  ? 'bg-green-700 text-[#FFF]'
+                  : ''
+              }`,
               innerText: items.statusTask,
             }),
           ],
@@ -116,6 +133,13 @@ function items() {
                       className: 'w-6',
                       alt: 'icon_Delete',
                       src: '../../../../src/assets/img/trash-bin-minimalistic-2-svgrepo-com.svg',
+                      id: items.id,
+                      eventListener: [
+                        {
+                          event: 'click',
+                          callback: delete_Item,
+                        },
+                      ],
                     }),
                   ],
                 }),
@@ -128,6 +152,13 @@ function items() {
                       className: 'w-6',
                       alt: 'icon_Edit',
                       src: '../../../../src/assets/img/edit-svgrepo-com.svg',
+                      id: items.id,
+                      eventListener: [
+                        {
+                          event: 'click',
+                          callback: Edit_Item,
+                        },
+                      ],
                     }),
                   ],
                 }),
@@ -140,6 +171,13 @@ function items() {
                       className: 'w-6',
                       alt: 'icon_Edit',
                       src: '../../../../src/assets/img/eye-svgrepo-com.svg',
+                      id: items.id,
+                      eventListener: [
+                        {
+                          event: 'click',
+                          callback: Show_Item,
+                        },
+                      ],
                     }),
                   ],
                 }),
@@ -151,4 +189,5 @@ function items() {
     });
   });
 }
-console.log(items());
+
+

@@ -117,3 +117,5 @@ export const ViewDataModal = (idViewModal) => {
     ],
   });
 };
+
+

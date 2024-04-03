@@ -93,8 +93,14 @@ export const Modal = (
             element: 'h3',
             innerHtml: `${titleModal}`,
           }),
-          modalAddAndEdit(btnName, idForm, id_InputTask, id_InputDescription,  Id_priority,
-            Id_statusTask),
+          modalAddAndEdit(
+            btnName,
+            idForm,
+            id_InputTask,
+            id_InputDescription,
+            Id_priority,
+            Id_statusTask
+          ),
         ],
       }),
     ],
